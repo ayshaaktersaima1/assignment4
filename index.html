@@ -35,15 +35,15 @@
         <div class="options-con grid grid-cols-3 gap-4">
             <div class="bg-white  border border-[#F1F2F4] rounded-lg p-5 ">
                 <p class="text-[#3B3249] text-sm font-mediums">Total</p>
-                <h3 class="text-[#002C5C] font-bold text-2xl">8</h3>
+                <h3 id="total-count" class="text-[#002C5C] font-bold text-2xl">0</h3>
             </div>
             <div class="bg-white  border border-[#F1F2F4] rounded-lg p-5 ">
                 <p class="text-[#3B3249] text-sm font-mediums">Interview</p>
-                <h3 class="text-[#10B981] font-bold text-2xl">0</h3>
+                <h3 id="interview-count" class="text-[#10B981] font-bold text-2xl">0</h3>
             </div>
             <div class="bg-white  border border-[#F1F2F4] rounded-lg p-5 ">
                 <p class="text-[#3B3249] text-sm font-mediums">Rejected</p>
-                <h3 class="text-[#EF4444] font-bold text-2xl">0</h3>
+                <h3 id="rejected-count" class="text-[#EF4444] font-bold text-2xl">0</h3>
             </div>
         </div>
         <hr class="border-[#E6E7E9] mt-6 mb-5">
@@ -52,19 +52,19 @@
     <main class="w-[70%] mx-auto">
         <div class="flex justify-between">
             <h1 class="text-[#002c5c] text-xl font-semibold pb-6">Available Jobs</h1>
-            <h3 class="text-base text-[#64748bFF] font-medium">8 jobs</h3>
+            <h3 class="text-base text-[#64748bFF] font-medium"><span id="total-job">0</span> jobs</h3>
         </div>
-        <section>
+        <section class="sec1">
             <div class="all-btn-container flex gap-2 mb-4">
-                <button id="btn-all"
+                <button onclick="toggleBtn('btn-all')" id="btn-all"
                     class="bg-[#3b82f6] text-white font-medium text-sm border pl-8 pr-8 pt-2.5 pb-2.5 border-1 border-[#f1f2f4] rounded-[4px]">All</button>
-                <button id="btn-interview"
+                <button onclick="toggleBtn('btn-interview')" id="btn-interview"
                     class="bg-white text-[#64748b] font-medium text-sm border pl-8 pr-8 pt-2.5 pb-2.5 border-1 border-[#f1f2f4] rounded-[4px]">Interview</button>
-                <button id="btn-rejected"
+                <button onclick="toggleBtn('btn-rejected')" id="btn-rejected"
                     class="bg-white text-[#64748b] font-medium text-sm border pl-8 pr-8 pt-2.5 pb-2.5 border-1 border-[#f1f2f4] rounded-[4px]">Rejected</button>
             </div>
 
-            <div class="all-cards-main-container space-y-4 mb-15">
+            <div id="all-cards-main-container" class="space-y-4 mb-15">
 
                 <!-- card1 -->
                 <div class="bg-white border border-[#f1f2f4] rounded-lg p-6 flex justify-between">
@@ -327,7 +327,7 @@
         </section>
 
         <!-- another sec -->
-        <section>
+        <section id="sec2" class="hidden">
             <div class="all-cards-main-container space-y-4 mb-15">
 
                 <!-- card1 -->
