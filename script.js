@@ -55,9 +55,6 @@ function toggleBtn(id) {
         filterSec.classList.remove('hidden');
         renderInterview();
 
-
-
-
         // // for delete
         // document.addEventListener('click', function (event) {
         //     if (event.target.classList.contains('right-side')) {
@@ -70,19 +67,6 @@ function toggleBtn(id) {
         //         console.log(totalCountAfterDelete)
         //     }
         // })
-
-
-
-
-
-        // sec2 part
-        const sec2 = document.getElementById('sec2');
-        if (interviewList.length === 0) {
-            sec2.classList.remove('hidden');
-        }
-        else {
-            sec2.classList.add('hidden');
-        }
 
 
     }
@@ -99,14 +83,6 @@ function toggleBtn(id) {
 
         renderRejected();
 
-        // sec2 part
-        const sec2 = document.getElementById('sec2');
-        if (rejectedList.length === 0) {
-            sec2.classList.remove('hidden');
-        }
-        else {
-            sec2.classList.add('hidden');
-        }
     }
 }
 
@@ -186,6 +162,15 @@ document.addEventListener('click', function (event) {
 
 function renderInterview() {
     filterSec.innerHTML = '';
+
+    // sec2 part
+    const sec2 = document.getElementById('sec2');
+    if (interviewList.length === 0) {
+        sec2.classList.remove('hidden');
+    }
+    else {
+        sec2.classList.add('hidden');
+    }
     document.getElementById('total-job').innerText = interviewList.length;
 
     for (let interview of interviewList) {
@@ -241,7 +226,17 @@ function renderInterview() {
 
 function renderRejected() {
     filterSec.innerHTML = '';
+    // sec2 part
+    const sec2 = document.getElementById('sec2');
+    if (rejectedList.length === 0) {
+        sec2.classList.remove('hidden');
+    }
+    else {
+        sec2.classList.add('hidden');
+    }
     document.getElementById('total-job').innerText = rejectedList.length;
+
+
     for (let rejected of rejectedList) {
         let div = document.createElement('div');
         div.className = `space-y-4 mb-4`;
