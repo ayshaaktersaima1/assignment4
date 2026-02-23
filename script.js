@@ -202,7 +202,7 @@ function renderInterview() {
                     </div>
                     <div
                         class=" border border-[#F1F2F4] rounded-full h-[38px] w-[38px] flex justify-center items-center p-3">
-                        <i class="right-side fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
+                        <i class="fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
                     </div>
                 </div>
         `
@@ -267,7 +267,7 @@ function renderRejected() {
                     </div>
                     <div
                         class=" border border-[#F1F2F4] rounded-full h-[38px] w-[38px] flex justify-center items-center p-3">
-                        <i class="right-side fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
+                        <i class="fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
                     </div>
                 </div>
         `
