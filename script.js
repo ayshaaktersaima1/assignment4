@@ -38,6 +38,15 @@ function toggleBtn(id) {
         filterSec.classList.remove('hidden');
 
     }
+    else if (id === 'btn-all') {
+        cardContainer.classList.remove('hidden');
+        filterSec.classList.add('hidden');
+
+    }
+    else if (id === 'btn-rejected') {
+        cardContainer.classList.add('hidden');
+        filterSec.classList.remove('hidden');
+    }
 }
 
 
@@ -77,7 +86,7 @@ function renderInterview() {
         div.innerHTML = `
         <div class="bg-white border border-[#f1f2f4] rounded-lg p-6 flex justify-between">
                     <div class="left-side">
-                        <h2 class="text-[#002c5c] text-lg font-semibold pb-1 company">Mobile First Corp</h2>
+                        <h2 class="text-[#002c5c] text-lg font-semibold pb-1 company">hi</h2>
                         <p class="text-base font-normal text-[#64748b] job-title">React Native Developer</p>
                         <p class="text-[#64748b] text-sm font-normal pt-5 pb-5 job-details">Remote • Full-time •
                             $130,000 - $175,000
