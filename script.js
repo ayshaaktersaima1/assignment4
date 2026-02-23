@@ -167,11 +167,16 @@ function renderInterview() {
     const sec2 = document.getElementById('sec2');
     if (interviewList.length === 0) {
         sec2.classList.remove('hidden');
+        document.getElementById('total-job').innerText = interviewList.length;
     }
     else {
         sec2.classList.add('hidden');
+        document.getElementById('total-job').innerText = interviewList.length + ' of ' + cardContainer.children.length;
     }
-    document.getElementById('total-job').innerText = interviewList.length;
+    // document.getElementById('total-job').innerText = interviewList.length;
+    // document.getElementById('total-job').innerText = interviewList.length + ' of ' + cardContainer.children.length;
+
+
 
     for (let interview of interviewList) {
         let div = document.createElement('div');
@@ -230,11 +235,12 @@ function renderRejected() {
     const sec2 = document.getElementById('sec2');
     if (rejectedList.length === 0) {
         sec2.classList.remove('hidden');
+        document.getElementById('total-job').innerText = rejectedList.length;
     }
     else {
         sec2.classList.add('hidden');
+        document.getElementById('total-job').innerText = rejectedList.length + ' of ' + cardContainer.children.length;
     }
-    document.getElementById('total-job').innerText = rejectedList.length;
 
 
     for (let rejected of rejectedList) {
