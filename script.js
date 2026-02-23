@@ -18,9 +18,14 @@ document.addEventListener('click', function (event) {
         totalCountAfterDelete = totalCountAfterDelete - 1;
         totalCount.innerText = totalCountAfterDelete;
         document.getElementById('total-job').innerText = totalCountAfterDelete;
+
+        // for hidden part
+        if (totalCountAfterDelete === 0) {
+            const sec2 = document.getElementById('sec2');
+            sec2.classList.remove('hidden');
+        }
     }
 })
-
 
 document.getElementById('total-job').innerText = cardContainer.children.length;
 function calculateCount() {
@@ -54,20 +59,6 @@ function toggleBtn(id) {
         cardContainer.classList.add('hidden');
         filterSec.classList.remove('hidden');
         renderInterview();
-
-        // // for delete
-        // document.addEventListener('click', function (event) {
-        //     if (event.target.classList.contains('right-side')) {
-        //         const deleteBtn = event.target.parentNode.parentNode;
-        //         deleteBtn.remove();
-        //         let length1 = interviewList.length;
-        //         let totalCountAfterDelete = length1 - 1;
-        //         // totalCount.innerText = totalCountAfterDelete ;
-        //         document.getElementById('total-job').innerText = totalCountAfterDelete;
-        //         console.log(totalCountAfterDelete)
-        //     }
-        // })
-
 
     }
     else if (id === 'btn-all') {
@@ -111,7 +102,6 @@ document.addEventListener('click', function (event) {
         if (!companyExist) {
             interviewList.push(cardInfo);
         }
-        // document.getElementById('total-job').innerText = interviewList.length;
 
         rejectedList = rejectedList.filter(item => item.company != cardInfo.company);
         calculateCount();
@@ -121,7 +111,6 @@ document.addEventListener('click', function (event) {
         }
 
     }
-
 
     // for rejected
 
@@ -173,9 +162,6 @@ function renderInterview() {
         sec2.classList.add('hidden');
         document.getElementById('total-job').innerText = interviewList.length + ' of ' + cardContainer.children.length;
     }
-    // document.getElementById('total-job').innerText = interviewList.length;
-    // document.getElementById('total-job').innerText = interviewList.length + ' of ' + cardContainer.children.length;
-
 
 
     for (let interview of interviewList) {
@@ -210,20 +196,6 @@ function renderInterview() {
         filterSec.appendChild(div);
 
     }
-
-    // for delete
-    // document.addEventListener('click', function (event) {
-    //     if (event.target.classList.contains('right-side')) {
-    //         const deleteBtn = event.target.parentNode.parentNode;
-    //         deleteBtn.remove();
-    //         let totalCountAfterDelete = interviewList.length + 1;
-    //         totalCountAfterDelete = totalCountAfterDelete - 1;
-    //         interviewCount.innerText = totalCountAfterDelete;
-    //         document.getElementById('total-job').innerText = totalCountAfterDelete;
-    //         console.log(deleteBtn)
-
-    //     }
-    // })
 }
 
 
