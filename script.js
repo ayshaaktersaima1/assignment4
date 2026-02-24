@@ -83,9 +83,6 @@ document.addEventListener('click', function (event) {
             }
         }
 
-
-        parentNode.querySelector('.btn-status').innerText = 'INTERVIEW';
-
         const cardInfo = {
             company,
             jobTitle,
