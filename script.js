@@ -8,25 +8,6 @@ let rejectedCount = document.getElementById('rejected-count');
 const cardContainer = document.getElementById('all-cards-main-container');
 
 
-
-// for delete
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('right-side')) {
-        const deleteBtn = event.target.parentNode.parentNode;
-        deleteBtn.remove();
-        let totalCountAfterDelete = cardContainer.children.length + 1;
-        totalCountAfterDelete = totalCountAfterDelete - 1;
-        totalCount.innerText = totalCountAfterDelete;
-        document.getElementById('total-job').innerText = totalCountAfterDelete;
-
-        // for hidden part
-        if (totalCountAfterDelete === 0) {
-            const sec2 = document.getElementById('sec2');
-            sec2.classList.remove('hidden');
-        }
-    }
-})
-
 document.getElementById('total-job').innerText = cardContainer.children.length;
 function calculateCount() {
     totalCount.innerText = cardContainer.children.length;
@@ -143,8 +124,45 @@ document.addEventListener('click', function (event) {
             renderInterview();
         }
         calculateCount();
-        console.log(currentStatus)
 
+
+    }
+
+    // FOR DELETE
+
+    else if (event.target.classList.contains('right-side')) {
+
+
+        const parentNode = event.target.parentNode.parentNode;
+        const company = parentNode.querySelector('.company').innerText;
+
+        interviewList = interviewList.filter(item => item.company !== company);
+
+        rejectedList = rejectedList.filter(item => item.company !== company);
+
+        const allCards = cardContainer.querySelectorAll('.bg-white');
+
+        for (let card of allCards) {
+            const comp = card.querySelector('.company').innerText;
+            if (comp === company) {
+                card.remove();
+                document.getElementById('total-job').innerText = allCards.length - 1;
+                if (cardContainer.children.length === 0) {
+                    document.getElementById('sec2').classList.remove('hidden');
+                }
+                break;
+            }
+        }
+        parentNode.remove();
+        calculateCount();
+
+
+        if (currentStatus === 'btn-interview') {
+            renderInterview();
+        }
+        else if (currentStatus === 'btn-rejected') {
+            renderRejected();
+        }
     }
 })
 
@@ -188,7 +206,7 @@ function renderInterview() {
                     </div>
                     <div
                         class=" border border-[#F1F2F4] rounded-full h-[38px] w-[38px] flex justify-center items-center p-3">
-                        <i class="fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
+                        <i class="right-side fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
                     </div>
                 </div>
         `
@@ -239,7 +257,7 @@ function renderRejected() {
                     </div>
                     <div
                         class=" border border-[#F1F2F4] rounded-full h-[38px] w-[38px] flex justify-center items-center p-3">
-                        <i class="fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
+                        <i class="right-side fa-regular fa-trash-can " style="color: rgb(100, 116, 139);"></i>
                     </div>
                 </div>
         `
