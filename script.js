@@ -73,7 +73,15 @@ document.addEventListener('click', function (event) {
         const jobTitle = parentNode.querySelector('.job-title').innerText;
         const jobDetails = parentNode.querySelector('.job-details').innerText;
         const jobDes = parentNode.querySelector('.job-des').innerText;
-        const btnStatus = parentNode.querySelector('.btn-status').innerText;
+        const allCards = cardContainer.querySelectorAll('.bg-white');
+
+        for (let card of allCards) {
+            const comp = card.querySelector('.company').innerText;
+            if (comp === company) {
+                card.querySelector('.btn-status').innerText = 'INTERVIEW';
+                break;
+            }
+        }
 
 
         parentNode.querySelector('.btn-status').innerText = 'INTERVIEW';
@@ -109,8 +117,15 @@ document.addEventListener('click', function (event) {
         const jobDetails = parentNode.querySelector('.job-details').innerText;
         const jobDes = parentNode.querySelector('.job-des').innerText;
         const btnStatus = parentNode.querySelector('.btn-status').innerText;
+        const allCards = cardContainer.querySelectorAll('.bg-white');
 
-        parentNode.querySelector('.btn-status').innerText = 'REJECTED';
+        for (let card of allCards) {
+            const comp = card.querySelector('.company').innerText;
+            if (comp === company) {
+                card.querySelector('.btn-status').innerText = 'REJECTED';
+                break;
+            }
+        }
 
         const cardInfo = {
             company,
@@ -273,4 +288,3 @@ function renderRejected() {
 
     }
 }
-
