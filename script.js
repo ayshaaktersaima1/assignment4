@@ -218,9 +218,9 @@ function renderInterview() {
 
                         <div class="double-btn-con flex gap-2">
                             <button
-                                class="card-btn1 text-sm font-semibold text-[#ef4444] border border-[ #10b981] rounded px-3 py-2">INTERVIEW</button>
+                                class="card-btn1 text-sm font-semibold text-[#10b981] border border-[ #10b981] rounded px-3 py-2">INTERVIEW</button>
                             <button
-                                class="card-btn2 text-sm font-semibold text-[#10b981] border border-[ #10b981] rounded px-3 py-2">REJECTED</button>
+                                class="card-btn2 text-sm font-semibold text-[#ef4444] border border-[ #ef4444] rounded px-3 py-2">REJECTED</button>
                         </div>
                     </div>
                     <div
@@ -269,9 +269,9 @@ function renderRejected() {
 
                         <div class="double-btn-con flex gap-2">
                             <button
-                                class="card-btn1 text-sm font-semibold text-[#ef4444] border border-[ #10b981] rounded px-3 py-2">INTERVIEW</button>
+                                class="card-btn1 text-sm font-semibold text-[#10b981] border border-[ #10b981] rounded px-3 py-2">INTERVIEW</button>
                             <button
-                                class="card-btn2 text-sm font-semibold text-[#10b981] border border-[ #10b981] rounded px-3 py-2">REJECTED</button>
+                                class="card-btn2 text-sm font-semibold text-[#ef4444] border border-[ #ef4444] rounded px-3 py-2">REJECTED</button>
                         </div>
                     </div>
                     <div
