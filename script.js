@@ -46,6 +46,13 @@ function toggleBtn(id) {
         cardContainer.classList.remove('hidden');
         filterSec.classList.add('hidden');
         document.getElementById('total-job').innerText = cardContainer.children.length;
+        const sec2 = document.getElementById('sec2');
+        if (cardContainer.children.length === 0) {
+            sec2.classList.remove('hidden');
+        }
+        else {
+            sec2.classList.add('hidden');
+        }
 
 
     }
